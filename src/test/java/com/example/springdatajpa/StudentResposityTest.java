@@ -27,6 +27,7 @@ public class StudentResposityTest {
     }
 
     @Test
+
     public void delete() {
         studentRepository.deleteStudentById(1);
     }

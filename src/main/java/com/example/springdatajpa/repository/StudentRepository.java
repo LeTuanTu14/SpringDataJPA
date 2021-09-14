@@ -9,7 +9,7 @@ import javax.transaction.Transactional;
 import java.util.List;
 
 public interface StudentRepository extends JpaRepository<Student, Long>{
-    @Query("select s from Student s")
+    @Query(value = "select * from student", nativeQuery = true)
     List<Student> getAll();
 
     @Transactional
@@ -24,6 +24,6 @@ public interface StudentRepository extends JpaRepository<Student, Long>{
 
     @Transactional
     @Modifying
-    @Query("delete from Student t where t.id = ?1")
+    @Query(value ="delete from student t where t.id = ?1", nativeQuery = true)
     void deleteStudentById(Integer id);
 }
