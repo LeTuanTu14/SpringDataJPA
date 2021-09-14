@@ -1,5 +1,6 @@
 package com.example.springdatajpa;
 
+import com.example.springdatajpa.entity.Student;
 import com.example.springdatajpa.repository.StudentRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,22 +14,7 @@ public class StudentResposityTest {
 
     @Test
     public void getAll() {
-        System.out.println("getAll: " + studentRepository.getAll());
+        System.out.println("getAll: " + studentRepository.findAll());
     }
 
-    @Test
-    public void add() {
-        studentRepository.addStudent("Tuan Tu", "abc@gmail.com");
-    }
-
-    @Test
-    public void update() {
-        studentRepository.updateStudent(1,"Tuan Tu 14", "tu@gmail.com");
-    }
-
-    @Test
-
-    public void delete() {
-        studentRepository.deleteStudentById(1);
-    }
 }
